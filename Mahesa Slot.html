@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Slot Machine</title>\
+    <style>\
+        body \{ font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f0f0; \}\
+        .slot-machine \{ text-align: center; \}\
+        .result \{ font-size: 2em; margin-top: 20px; \}\
+        .slot \{ font-size: 3em; padding: 10px; margin: 5px; background-color: #fff; border: 1px solid #ccc; \}\
+        button \{ font-size: 1.2em; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; \}\
+        button:hover \{ background-color: #45a049; \}\
+    </style>\
+</head>\
+<body>\
+    <div class="slot-machine">\
+        <div class="slot" id="slot1">
+\f1 \uc0\u55356 \u57170 
+\f0 </div>\
+        <div class="slot" id="slot2">
+\f1 \uc0\u55356 \u57163 
+\f0 </div>\
+        <div class="slot" id="slot3">
+\f1 \uc0\u55356 \u57161 
+\f0 </div>\
+        <button onclick="spin()">Spin</button>\
+        <div class="result" id="result">Try your luck!</div>\
+    </div>\
+\
+    <script>\
+        const symbols = ["
+\f1 \uc0\u55356 \u57170 
+\f0 ", "
+\f1 \uc0\u55356 \u57163 
+\f0 ", "
+\f1 \uc0\u55356 \u57161 
+\f0 ", "
+\f1 \uc0\u55356 \u57162 
+\f0 ", "
+\f1 \uc0\u55356 \u57165 
+\f0 ", "
+\f1 \uc0\u55356 \u57159 
+\f0 ", "
+\f1 \uc0\u55357 \u56596 
+\f0 ", "
+\f1 \uc0\u11088 
+\f0 "];\
+\
+        function spin() \{\
+            const slot1 = symbols[Math.floor(Math.random() * symbols.length)];\
+            const slot2 = symbols[Math.floor(Math.random() * symbols.length)];\
+            const slot3 = symbols[Math.floor(Math.random() * symbols.length)];\
+\
+            document.getElementById("slot1").innerText = slot1;\
+            document.getElementById("slot2").innerText = slot2;\
+            document.getElementById("slot3").innerText = slot3;\
+\
+            if (slot1 === slot2 && slot2 === slot3) \{\
+                document.getElementById("result").innerText = "Congratulations! You Win!";\
+            \} else \{\
+                document.getElementById("result").innerText = "Try Again!";\
+            \}\
+        \}\
+    </script>\
+</body>\
+</html>}
